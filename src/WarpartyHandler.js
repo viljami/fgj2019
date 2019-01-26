@@ -21,11 +21,11 @@ class WarpartyHandler {
                 }
                 graphPartyIds.push(party.id);
             }
-            for (var party in this.parties) {
-                if (graphPartyIds.indexOf(party) == -1) {
-                    this.parties[party].getSprite().destroy();
-                    delete this.parties[party];
-                }
+        }
+        for (var party in this.parties) {
+            if (graphPartyIds.indexOf(party) == -1) {
+                this.parties[party].getSprite().destroy();
+                delete this.parties[party];
             }
         }
     }
