@@ -1,5 +1,5 @@
 import makeAnimations from '../helpers/animations';
-import graph from '../../assets/graph.json'
+import graph from '../model/graph';
 
 class BootScene extends Phaser.Scene {
     constructor(test) {

@@ -1,11 +1,13 @@
 import graph from './model/graph'
 
+const isPlayer = ({owner}) => owner === 'player';
 const dist = (n1, n2) => {
   const dx = n2.x - n2.x;
   const dy = n2.y - n2.y;
   return Math.sqrt(dx * dx - dy * dy);
 };
 
+const addGeneration = (a, b) => a + b.generation;
 const getNode = nodeName => graph.nodes.find(({name}) => name === nodeName);
 const getPath = (name1, name2) => graph.paths
   .find(({node1, node2}) =>
@@ -21,8 +23,9 @@ const createWarParty = (fromNode, toNode) => ({
 
 export const generate = () => {
   getNode('nest').defence += graph.nodes
-  .filter(({owner}) => owner === 'player')
-  .reduce((a, b) => a + b.generation, 0);
+  .filter(isPlayer)
+  .reduce(addGeneration, 0);
+  console.log(getNode('nest').defence);
 };
 
 export const sendWarParty = (fromNode, toNode) => {
