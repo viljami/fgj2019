@@ -1,4 +1,5 @@
 import makeAnimations from '../helpers/animations';
+import graph from '../../assets/graph.json'
 
 class BootScene extends Phaser.Scene {
     constructor(test) {
@@ -7,8 +8,8 @@ class BootScene extends Phaser.Scene {
         });
     }
 
-    create(model) {
-        this.model = model;
+    create() {
+
     }
 
     preload() {
@@ -26,7 +27,7 @@ class BootScene extends Phaser.Scene {
             // prepare all animations, defined in a separate file
             makeAnimations(this);
             progress.destroy();
-            this.scene.start('GameScene', this.model);
+            this.scene.start('GameScene', graph);
         });
 
         this.load.image('bg', 'assets/images/bg.jpg');
