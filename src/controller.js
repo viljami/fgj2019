@@ -34,12 +34,15 @@ export const generate = () => {
 };
 
 export const sendWarParty = (fromNode, toNode) => {
+  if (!fromNode.defence) {
+    return;
+  }
+
   const path = getPath(fromNode.name, toNode.name);
   const warParty = createWarParty(fromNode, toNode);
-  
+
   path.parties.push(warParty);
   fromNode.defence = 0;
-  return warParty;
 };
 
 export const fight = ({owner, power, toNode}) => {

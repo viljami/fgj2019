@@ -43,6 +43,7 @@ class GameScene extends Phaser.Scene {
         this.warpartyHandler.updateWarParties(this.model, this.nodeMapping);
 
         if (now - this.computerLastStep > COMPUTER_INTERVAL) {
+            this.computerLastStep = now;
             const nodes = this.model.nodes.filter(isComputer);
             this.model.paths.forEach(a => {
                 if (nodes.some(b => a.node1 === b.name)) {
