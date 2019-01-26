@@ -1,11 +1,13 @@
 import Path from '../sprites/path';
 import GameObjectCollection from '../GameObjectCollection';
+import GameInputHandler from '../GameInputHandler'
 
 class GameScene extends Phaser.Scene {
     constructor() {
         super({
             key: 'GameScene'
         });
+        this.gameInputHandler = new GameInputHandler(this);
     }
 
     preload() {
@@ -14,6 +16,7 @@ class GameScene extends Phaser.Scene {
 
     create(model) {
         this.loadGraph(model);
+        this.gameInputHandler.setupInput();
     }
 
     loadGraph(model) {
@@ -24,16 +27,18 @@ class GameScene extends Phaser.Scene {
                 throw new Error('Unknown object type ' + node.name);
             }
             var obj = new objCtr(node, this);
-
+            this.gameInputHandler.setupDrag(node, obj);
             obj.getSprite().setPosition(node.x, node.y);
             nodeMapping[node.name] = node;
         }
         for (var path of model.paths) {
             var node1 = nodeMapping[path.node1];
             var node2 = nodeMapping[path.node2];
-            new Path(path, this, node1.x, node1.y, node2.x, node2.y);
+            var p = new Path(path, this, node1.x, node1.y, node2.x, node2.y);
+            this.gameInputHandler.setupPathInput(path, p);
         }
     }
+
 }
 
 export default GameScene;

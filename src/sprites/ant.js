@@ -1,5 +1,5 @@
 class Ant {
-    constructor(model, scene) {
+    constructor(model, scene, controller) {
         this.model = model;
         this.circle = new Phaser.Geom.Circle(0, 0, 30);
         this.graphics = scene.add.graphics({ lineStyle: { width: 3, color: 0xff00ff }, fillStyle: { color: 0x00ff00 } });
