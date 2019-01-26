@@ -30,6 +30,8 @@ class GameScene extends Phaser.Scene {
         this.model = model;
         this.loadGraph(model);
         this.gameInputHandler.setupInput();
+        var bgm = this.sound.add('bgm', {loop: true});
+        bgm.play();
     }
 
 
