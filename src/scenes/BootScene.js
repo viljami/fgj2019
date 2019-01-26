@@ -38,6 +38,7 @@ class BootScene extends Phaser.Scene {
         this.load.image('mouse', 'assets/images/mouse.png');
         this.load.image('snake', 'assets/images/snake.png');
         this.load.image('worm', 'assets/images/worm.png');
+        this.load.image('trail', 'assets/images/trail.png');
 
         // Tilemap with a lot of objects and tile-properties tricks
         // this.load.tilemapTiledJSON('map', 'assets/tilemaps/super-mario.json');

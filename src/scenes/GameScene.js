@@ -30,12 +30,14 @@ class GameScene extends Phaser.Scene {
             this.gameInputHandler.setupDrag(node, obj);
             obj.getSprite().setPosition(node.x, node.y);
             nodeMapping[node.name] = node;
+            obj.getSprite().setDepth(1);
         }
         for (var path of model.paths) {
             var node1 = nodeMapping[path.node1];
             var node2 = nodeMapping[path.node2];
             var p = new Path(path, this, node1.x, node1.y, node2.x, node2.y);
             this.gameInputHandler.setupPathInput(path, p);
+            p.getSprite().setDepth(0);
         }
     }
 
