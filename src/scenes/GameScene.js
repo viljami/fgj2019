@@ -17,7 +17,7 @@ class GameScene extends Phaser.Scene {
         super({key: 'GameScene'});
         this.gameInputHandler = new GameInputHandler(this);
         this.lastStep = 0;
-        this.computerLastStep = 0;
+        this.computerLastStep = Date.now();
         this.warpartyHandler = new WarpartyHandler(this);
         this.model = null;
     }

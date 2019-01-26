@@ -1,7 +1,7 @@
 {
     "nodes": [
         {
-            "name": "nest",
+            "name": "nest1",
             "owner": "player",
             "x": 100,
             "y": 300,
@@ -30,8 +30,8 @@
         {
             "name": "cake2",
             "owner": "computer",
-            "x": 500,
-            "y": 700,
+            "x": 400,
+            "y": 750,
             "defence": 0,
             "generation": 5,
             "spritePath": ""
@@ -39,7 +39,7 @@
         {
             "name": "cake3",
             "owner": "computer",
-            "x": 700,
+            "x": 650,
             "y": 700,
             "defence": 0,
             "generation": 5,
@@ -50,7 +50,7 @@
             "owner": "computer",
             "x": 1000,
             "y": 300,
-            "defence": 100,
+            "defence": 50,
             "generation": 5,
             "spritePath": ""
         },
@@ -59,18 +59,27 @@
             "owner": "computer",
             "x": 500,
             "y": 400,
-            "defence": 100,
+            "defence": 50,
+            "generation": 5,
+            "spritePath": ""
+        },
+        {
+            "name": "nest2",
+            "owner": "computer",
+            "x": 1050,
+            "y": 100,
+            "defence": 20,
             "generation": 5,
             "spritePath": ""
         }
     ],
     "paths": [
         {
-            "node1": "nest",
+            "node1": "nest1",
             "node2": "worm"
         },
         {
-            "node1": "nest",
+            "node1": "nest1",
             "node2": "cake1"
         },
         {
@@ -92,6 +101,10 @@
         {
             "node1": "snake1",
             "node2": "snake2"
+        },
+        {
+            "node1": "snake1",
+            "node2": "nest2"
         }
     ]
 }

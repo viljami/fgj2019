@@ -1,10 +1,10 @@
 import graph from './model/graph'
 
-const isPlayer = ({owner}) => owner === 'player';
+const isTeam = team => ({owner}) => owner === team;
 const dist = (n1, n2) => {
   const dx = n2.x - n1.x;
   const dy = n2.y - n1.y;
-  return Math.sqrt(dx * dx - dy * dy);
+  return Math.sqrt(dx * dx + dy * dy);
 };
 
 const addGeneration = (a, b) => a + b.generation;
@@ -25,12 +25,15 @@ const createWarParty = (fromNode, toNode) => ({
   toNode
 });
 
+export const getNodes = nodeName => graph.nodes.filter(({name}) => name.includes(nodeName));
 export const getNode = nodeName => graph.nodes.find(({name}) => name === nodeName);
 
 export const generate = () => {
-  getNode('nest').defence += graph.nodes
-  .filter(isPlayer)
-  .reduce(addGeneration, 0);
+  getNodes('nest').forEach(n =>
+    n.defence += graph.nodes
+    .filter(isTeam(n.owner))
+    .reduce(addGeneration, 0)
+  );
 };
 
 export const sendWarParty = (fromNode, toNode) => {
