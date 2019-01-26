@@ -22,11 +22,11 @@ class GameInputHandler {
             }
 
             if (this.selectedObject && this.targetNode){
-                console.log('node', this.selectedObject, this.selectedNode);
-                if (this.selectedNode) {
+                console.log('node', this.selectedObject, this.targetNode);
+                if (this.selectedObject.name !== this.targetNode.name) {
                     sendWarParty(
                         this.selectedObject,
-                        this.selectedNode
+                        this.targetNode
                     );
                 }
             }
