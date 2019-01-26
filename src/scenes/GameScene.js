@@ -5,6 +5,7 @@ import GameInputHandler from '../GameInputHandler'
 import { step } from '../controller';
 import { STEP_INTERVAL } from '../config';
 
+const NUMBER = /\d+/;
 const update = a => a.update();
 
 class GameScene extends Phaser.Scene {
@@ -37,9 +38,10 @@ class GameScene extends Phaser.Scene {
     loadGraph(model) {
         var nodeMapping = {};
         for (var node of model.nodes) {
-            var objCtr = GameObjectCollection[node.name];
+            const name = node.name.split(NUMBER)[0];
+            var objCtr = GameObjectCollection[name];
             if (!objCtr) {
-                throw new Error('Unknown object type ' + node.name);
+                throw new Error('Unknown object type ' + name);
             }
             var obj = new objCtr(node, this);
             this.gameInputHandler.setupDrag(node, obj);
