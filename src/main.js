@@ -10,6 +10,15 @@ const config = {
     parent: 'content',
     width: window.innerWidth,
     height: window.innerHeight,
+    physics: {
+        default: 'arcade',
+        arcade: {
+            gravity: {
+                y: 800
+            },
+            debug: false
+        }
+    },
     scene: [
         BootScene,
         GameScene

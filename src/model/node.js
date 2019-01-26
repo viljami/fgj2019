@@ -1,11 +1,12 @@
 
-class Node {
-  constructor(name, owner, x, y, defence, spritePath) {
-    this.name = name;
-    this.owner = owner;
-    this.x = x;
-    this.y = y;
-    this.defence = defence
-    this.spritePath = spritePath;
+export default class Node {
+  constructor(node) {
+    this.name = node.name;
+    this.owner = node.owner;
+    this.x = node.x;
+    this.y = node.y;
+    this.defence = node.defence
+    this.generation = node.generation;
+    this.spritePath = node.spritePath;
   }
 }

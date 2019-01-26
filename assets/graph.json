@@ -5,7 +5,8 @@
             "owner": "player",
             "x": 100,
             "y": 300,
-            "defence": 10,
+            "defence": 50,
+            "generation": 5,
             "spritePath": ""
         },
         {
@@ -14,6 +15,7 @@
             "x": 500,
             "y": 100,
             "defence": 10,
+            "generation": 5,
             "spritePath": ""
         },
         {
@@ -22,6 +24,7 @@
             "x": 500,
             "y": 600,
             "defence": 0,
+            "generation": 5,
             "spritePath": ""
         },
         {
@@ -30,6 +33,7 @@
             "x": 1000,
             "y": 300,
             "defence": 100,
+            "generation": 5,
             "spritePath": ""
         }
     ],

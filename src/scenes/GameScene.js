@@ -1,13 +1,17 @@
+/* global Phaser */
 import Path from '../sprites/path';
 import GameObjectCollection from '../GameObjectCollection';
 import GameInputHandler from '../GameInputHandler'
+import { step } from '../controller';
+import { STEP_INTERVAL } from '../config';
+
+const update = a => a.update();
 
 class GameScene extends Phaser.Scene {
     constructor() {
-        super({
-            key: 'GameScene'
-        });
+        super({key: 'GameScene'});
         this.gameInputHandler = new GameInputHandler(this);
+        this.lastStep = 0;
     }
 
     preload() {
@@ -17,6 +21,17 @@ class GameScene extends Phaser.Scene {
     create(model) {
         this.loadGraph(model);
         this.gameInputHandler.setupInput();
+    }
+
+
+    update() {
+        const now = Date.now();
+        if (now - this.lastStep > STEP_INTERVAL) {
+            step(now);
+            this.lastStep = now;
+        }
+
+        this.children.list.forEach(update);
     }
 
     loadGraph(model) {

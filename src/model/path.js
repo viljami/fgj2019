@@ -1,8 +1,8 @@
 
-class Path {
-  constructor(node1, node2, parties = []) {
-    this.node1 = node1;
-    this.node2 = node2;
-    this.parties = parties;
+export default class Path {
+  constructor(a) {
+    this.node1 = a.node1;
+    this.node2 = a.node2;
+    this.parties = [];
   }
 }
