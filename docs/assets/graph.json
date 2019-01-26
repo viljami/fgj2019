@@ -19,7 +19,7 @@
             "spritePath": ""
         },
         {
-            "name": "cake",
+            "name": "cake1",
             "owner": "computer",
             "x": 500,
             "y": 600,
@@ -28,10 +28,37 @@
             "spritePath": ""
         },
         {
-            "name": "snake",
+            "name": "cake2",
+            "owner": "computer",
+            "x": 500,
+            "y": 700,
+            "defence": 0,
+            "generation": 5,
+            "spritePath": ""
+        },
+        {
+            "name": "cake3",
+            "owner": "computer",
+            "x": 700,
+            "y": 700,
+            "defence": 0,
+            "generation": 5,
+            "spritePath": ""
+        },
+        {
+            "name": "snake1",
             "owner": "computer",
             "x": 1000,
             "y": 300,
+            "defence": 100,
+            "generation": 5,
+            "spritePath": ""
+        },
+        {
+            "name": "snake2",
+            "owner": "computer",
+            "x": 500,
+            "y": 400,
             "defence": 100,
             "generation": 5,
             "spritePath": ""
@@ -44,15 +71,27 @@
         },
         {
             "node1": "nest",
-            "node2": "cake"
+            "node2": "cake1"
         },
         {
             "node1": "worm",
-            "node2": "snake"
+            "node2": "snake1"
         },
         {
-            "node1": "cake",
-            "node2": "snake"
+            "node1": "cake1",
+            "node2": "snake1"
+        },
+        {
+            "node1": "cake1",
+            "node2": "cake2"
+        },
+        {
+            "node1": "cake1",
+            "node2": "cake3"
+        },
+        {
+            "node1": "snake1",
+            "node2": "snake2"
         }
     ]
 }
