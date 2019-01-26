@@ -1,13 +1,22 @@
 class Ant {
-    constructor(model, scene, controller) {
+    constructor(model, scene) {
         this.model = model;
-        this.circle = new Phaser.Geom.Circle(0, 0, 30);
-        this.graphics = scene.add.graphics({ lineStyle: { width: 3, color: 0xff00ff }, fillStyle: { color: 0x00ff00 } });
-        this.graphics.fillCircleShape(this.circle);
+        this.sprite = scene.add.sprite(this.model.fromNode.x, this.model.fromNode.y, 'ant');
+        this.sprite.setDisplaySize(40, 40);
+        this.tween = scene.tweens.add({
+            targets: this.sprite,
+            x: this.model.toNode.x,
+            y: this.model.toNode.y,
+            ease: 'Power1',
+            duration: this.model.duration,
+        });
+        var angle = Phaser.Math.Angle.Between(this.model.fromNode.x, this.model.fromNode.y, this.model.toNode.x, this.model.toNode.y);
+        this.sprite.setAngle(angle * 180/Math.PI + 90);
     }
 
+
     getSprite() {
-        return this.graphics;
+        return this.sprite;
     }
 }
 

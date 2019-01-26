@@ -2,8 +2,8 @@ import graph from './model/graph'
 
 const isPlayer = ({owner}) => owner === 'player';
 const dist = (n1, n2) => {
-  const dx = n2.x - n2.x;
-  const dy = n2.y - n2.y;
+  const dx = n2.x - n1.x;
+  const dy = n2.y - n1.y;
   return Math.sqrt(dx * dx - dy * dy);
 };
 
@@ -18,6 +18,10 @@ const createWarParty = (fromNode, toNode) => ({
   owner: fromNode.owner,
   power: fromNode.defence,
   startTime: Date.now(),
+  duration: dist(fromNode,toNode)*10,
+  endTime: Date.now(),
+  id: Phaser.Math.RND.uuid(),
+  fromNode,
   toNode
 });
 
@@ -32,6 +36,7 @@ export const generate = () => {
 export const sendWarParty = (fromNode, toNode) => {
   const path = getPath(fromNode.name, toNode.name);
   const warParty = createWarParty(fromNode, toNode);
+  
   path.parties.push(warParty);
   fromNode.defence = 0;
   return warParty;
@@ -61,7 +66,7 @@ export const step = now => {
   graph.paths.reduce((a, b) => {
     const {node1, node2, parties} = b;
     const attackerParties = parties
-    // .filter(({startTime}) => now - startTime > dist(getNode(node1), getNode(node2)));
+    .filter(({startTime, duration}) => now - startTime > duration);
     if (attackerParties.length) {
       attackerParties.forEach(fight);
     }
