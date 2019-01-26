@@ -8,7 +8,6 @@ const dist = (n1, n2) => {
 };
 
 const addGeneration = (a, b) => a + b.generation;
-const getNode = nodeName => graph.nodes.find(({name}) => name === nodeName);
 const getPath = (name1, name2) => graph.paths
   .find(({node1, node2}) =>
     node1 === name1 && node2 === name2 ||
@@ -16,16 +15,18 @@ const getPath = (name1, name2) => graph.paths
   );
 
 const createWarParty = (fromNode, toNode) => ({
+  owner: fromNode.owner,
   power: fromNode.defence,
-  toNode,
-  startTime: Date.now()
+  startTime: Date.now(),
+  toNode
 });
+
+export const getNode = nodeName => graph.nodes.find(({name}) => name === nodeName);
 
 export const generate = () => {
   getNode('nest').defence += graph.nodes
   .filter(isPlayer)
   .reduce(addGeneration, 0);
-  console.log(getNode('nest').defence);
 };
 
 export const sendWarParty = (fromNode, toNode) => {
@@ -36,13 +37,13 @@ export const sendWarParty = (fromNode, toNode) => {
   return warParty;
 };
 
-export const fight = ({power, toNode}) => {
+export const fight = ({owner, power, toNode}) => {
   if (toNode.defence >= power) {
     return;
   }
 
-  toNode.owner = 'player';
-  toNode.power = power - toNode.defence;
+  toNode.owner = owner;
+  toNode.defence = power - toNode.defence;
 };
 
 let lastGenerationTime = 0;
@@ -53,11 +54,13 @@ export const step = now => {
   }
 
   // warparties at target?
-  graph.paths.reduce((a, {node1, node2, parties}) => {
+  graph.paths.reduce((a, b) => {
+    const {node1, node2, parties} = b;
     const attackerParties = parties
-    .filter(({startTime}) => now - startTime > dist(getNode(node1), getNode(node2)));
+    // .filter(({startTime}) => now - startTime > dist(getNode(node1), getNode(node2)));
     if (attackerParties.length) {
       attackerParties.forEach(fight);
     }
+    b.parties = parties.filter(c => !attackerParties.some(d => d === c));
   }, []);
 };

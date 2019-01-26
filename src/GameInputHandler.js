@@ -1,3 +1,5 @@
+import {sendWarParty, getNode} from './controller';
+
 class GameInputHandler {
 
     constructor(scene) {
@@ -9,12 +11,24 @@ class GameInputHandler {
     setupInput() {
         this.scene.input.on('pointerup', function() {
             if (this.selectedObject && this.selectedPath){
-                //this.selectedObject.name
-                //this.selectedPath
+                console.log('path', this.selectedObject, this.selectedPath);
+                sendWarParty(
+                    this.selectedObject,
+                    getNode(
+                        this.selectedPath.node1 === this.selectedObject.name ?
+                        this.selectedPath.node2 : this.selectedPath.node1
+                    )
+                );
             }
+
             if (this.selectedObject && this.targetNode){
-                //this.selectedObject.name
-                //this.targetNode
+                console.log('node', this.selectedObject, this.selectedNode);
+                if (this.selectedNode) {
+                    sendWarParty(
+                        this.selectedObject,
+                        this.selectedNode
+                    );
+                }
             }
             this.selectedObject = null;
         }.bind(this));
@@ -23,7 +37,7 @@ class GameInputHandler {
     setupDrag(model, obj) {
         obj.setDragHandler(this.onNodeDrag.bind(this));
         obj.getSprite().on('pointerover', function() {
-            this.targetNode = model; 
+            this.targetNode = model;
         }.bind(this));
         obj.getSprite().on('pointerout', function() {
             this.targetNode = null;

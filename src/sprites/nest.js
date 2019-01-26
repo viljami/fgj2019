@@ -14,6 +14,7 @@ class Nest extends Node {
     }
 
     update() {
+        this.graphics.clear();
         this.circle.setTo(this.circle.x, this.circle.y, this.model.defence || 1);
         this.graphics.fillCircleShape(this.circle);
     }
