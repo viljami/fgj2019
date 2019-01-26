@@ -3,19 +3,23 @@ import Path from '../sprites/path';
 import GameObjectCollection from '../GameObjectCollection';
 import GameInputHandler from '../GameInputHandler'
 import WarpartyHandler from '../WarpartyHandler'
-import { step } from '../controller';
-import { STEP_INTERVAL } from '../config';
-import graph from '../model/graph';
+import { step, getNode, sendWarParty } from '../controller';
+import { STEP_INTERVAL, COMPUTER_INTERVAL } from '../config';
 
+
+const IS_COMPUTER = /computer/;
 const NUMBER = /\d+/;
 const update = a => a.update();
+const isComputer = ({owner}) => IS_COMPUTER.test(owner);
 
 class GameScene extends Phaser.Scene {
     constructor() {
         super({key: 'GameScene'});
         this.gameInputHandler = new GameInputHandler(this);
         this.lastStep = 0;
+        this.computerLastStep = 0;
         this.warpartyHandler = new WarpartyHandler(this);
+        this.model = null;
     }
 
     preload() {
@@ -37,6 +41,27 @@ class GameScene extends Phaser.Scene {
         }
 
         this.warpartyHandler.updateWarParties(this.model, this.nodeMapping);
+
+        if (now - this.computerLastStep > COMPUTER_INTERVAL) {
+            const nodes = this.model.nodes.filter(isComputer);
+            this.model.paths.forEach(a => {
+                if (nodes.some(b => a.node1 === b.name)) {
+                    const n1 = getNode(a.node1);
+                    const n2 = getNode(a.node2);
+                    if (n2.defence < n1.defence) {
+                        sendWarParty(n1, n2);
+                    }
+                }
+
+                if (nodes.some(b => a.node2 === b.name)) {
+                    const n1 = getNode(a.node1);
+                    const n2 = getNode(a.node2);
+                    if (n1.defence < n2.defence) {
+                        sendWarParty(n2, n1);
+                    }
+                }
+            }, []);
+        }
 
         this.children.list.forEach(update);
     }
