@@ -1,9 +1,8 @@
-var Path = require('../sprites/path.js').default;
-var GameObjectCollection = require('../GameObjectCollection.js')
-var Graph = require('../../assets/graph.json');
+import Path from '../sprites/path';
+import GameObjectCollection from '../GameObjectCollection';
 
 class GameScene extends Phaser.Scene {
-    constructor(test) {
+    constructor() {
         super({
             key: 'GameScene'
         });
@@ -13,23 +12,23 @@ class GameScene extends Phaser.Scene {
 
     }
 
-    create() {
-        this.loadGraph(Graph);
+    create(model) {
+        this.loadGraph(model);
     }
 
-    loadGraph(graph) {
+    loadGraph(model) {
         var nodeMapping = {};
-        for (var node of graph.nodes) {
+        for (var node of model.nodes) {
             var objCtr = GameObjectCollection[node.name];
             if (!objCtr) {
                 throw new Error('Unknown object type ' + node.name);
             }
             var obj = new objCtr(node, this);
-        
+
             obj.getSprite().setPosition(node.x, node.y);
             nodeMapping[node.name] = node;
         }
-        for (var path of graph.paths) {
+        for (var path of model.paths) {
             var node1 = nodeMapping[path.node1];
             var node2 = nodeMapping[path.node2];
             new Path(path, this, node1.x, node1.y, node2.x, node2.y);

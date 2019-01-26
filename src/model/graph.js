@@ -1,6 +1,3 @@
+import graph from '../../assets/graph.json';
 
-class Graph {
-  constructor(graphFile) {
-
-  }
-}
+export default graph;
