@@ -6,8 +6,8 @@
             "owner": "player",
             "x": 100,
             "y": 360,
-            "defence": 30,
-            "generation": 1,
+            "defence": 100,
+            "generation": 5,
             "spritePath": ""
         },
         {
@@ -176,8 +176,8 @@
             "owner": "computer",
             "x": 1100,
             "y": 360,
-            "defence": 30,
-            "generation": 1,
+            "defence": 100,
+            "generation": 5,
             "spritePath": ""
         }
     ],
