@@ -3,7 +3,7 @@ import Path from '../sprites/path';
 import GameObjectCollection from '../GameObjectCollection';
 import GameInputHandler from '../GameInputHandler'
 import WarpartyHandler from '../WarpartyHandler'
-import { step, getNode, sendWarParty, isEnd } from '../controller';
+import { step, getNode, sendWarParty, isVictory, isDefeat } from '../controller';
 import { STEP_INTERVAL, COMPUTER_INTERVAL } from '../config';
 
 
@@ -30,8 +30,10 @@ class GameScene extends Phaser.Scene {
         this.model = model;
         this.loadGraph(model);
         this.gameInputHandler.setupInput();
-        const bgm = this.sound.add('bgm', {loop: true});
-        bgm.play();
+        this.victory = this.sound.add('victory', {loop: false});
+        this.defeat = this.sound.add('defeat', {loop: false});
+        this.bgm = this.sound.add('bgm', {loop: true});
+        this.bgm.play();
     }
 
 
@@ -66,8 +68,21 @@ class GameScene extends Phaser.Scene {
             }, []);
         }
 
-        if (isEnd()) {
-            window.location.reload();
+
+        const isVictoryState = isVictory();
+        const isDefeatState = isDefeat();
+        if (isVictoryState || isDefeatState) {
+            this.bgm.pause();
+
+            if (isVictoryState) {
+                this.victory.play();
+            } else {
+                this.defeat.play();
+            }
+
+            setTimeout(() => {
+                window.location.reload();
+            }, 10000);
         }
 
         this.children.list.forEach(update);

@@ -42,7 +42,10 @@ class BootScene extends Phaser.Scene {
         this.load.image('path', 'assets/images/path.png');
         this.load.image('nestsmall', 'assets/images/nest-small.png');
 
-        this.load.audio('bgm', 'assets/audio/antz(loop)v2.mp3');
+        this.load.audio('bgm', 'assets/audio/bgm_loop.mp3');
+        this.load.audio('march', 'assets/audio/march_loop.mp3');
+        this.load.audio('victory', 'assets/audio/victory.mp3');
+        this.load.audio('defeat', 'assets/audio/defeat.mp3');
 
         // Tilemap with a lot of objects and tile-properties tricks
         // this.load.tilemapTiledJSON('map', 'assets/tilemaps/super-mario.json');

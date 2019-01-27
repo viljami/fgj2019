@@ -81,6 +81,20 @@ export const step = now => {
   }, []);
 };
 
-export const isEnd = () =>
+export const isVictory = () =>
   graph.nodes.every(({owner}) => owner === 'player') ||
-  graph.nodes.every(({owner}) => owner === 'computer');
+  (graph.nodes
+  .filter(({owner}) => owner === 'computer')
+  .every(({defence}) => !defence) &&
+  !graph.paths.filter(({parties}) =>
+    !parties.every(({owner}) => owner !== 'computer')
+  ).length)
+
+export const isDefeat = () =>
+  graph.nodes.every(({owner}) => owner === 'computer') ||
+  (graph.nodes
+  .filter(({owner}) => owner === 'player')
+  .every(({defence}) => !defence) &&
+  !graph.paths.filter(({parties}) =>
+    !parties.every(({owner}) => owner !== 'player')
+  ).length);
