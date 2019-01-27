@@ -3,7 +3,7 @@ import Path from '../sprites/path';
 import GameObjectCollection from '../GameObjectCollection';
 import GameInputHandler from '../GameInputHandler'
 import WarpartyHandler from '../WarpartyHandler'
-import { step, getNode, sendWarParty } from '../controller';
+import { step, getNode, sendWarParty, isEnd } from '../controller';
 import { STEP_INTERVAL, COMPUTER_INTERVAL } from '../config';
 
 
@@ -64,6 +64,10 @@ class GameScene extends Phaser.Scene {
                     }
                 }
             }, []);
+        }
+
+        if (isEnd()) {
+            window.location.reload();
         }
 
         this.children.list.forEach(update);

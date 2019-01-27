@@ -80,3 +80,7 @@ export const step = now => {
     b.parties = parties.filter(c => !attackerParties.some(d => d === c));
   }, []);
 };
+
+export const isEnd = () =>
+  graph.nodes.every(({owner}) => owner === 'player') ||
+  graph.nodes.every(({owner}) => owner === 'computer');
