@@ -11,10 +11,11 @@ class Cake extends Node {
         this.circle = new Phaser.Geom.Circle(0, 0, this.model.defence || 5);
         this.graphics = scene.add.graphics({ lineStyle: { width: 3, color: 0xff00ff }, fillStyle: { color: 0x00ff00 } });
         this.graphics.fillCircleShape(this.circle);
+        this.graphics.alpha = 0.5;
         this.sprite.setDisplaySize(100, 100);
 
-        this.container.add(this.graphics);
         this.container.add(this.sprite);
+        this.container.add(this.graphics);
 
         this.setupInput();
 
@@ -27,6 +28,7 @@ class Cake extends Node {
         this.circle.setTo(this.circle.x, this.circle.y, this.model.defence / 3 < 5 ? 5 : this.model.defence / 3);
         this.inputCircle.setTo(0, 0, this.model.defence < 25 ? 25 : this.model.defence);
         this.graphics.fillCircleShape(this.circle);
+        this.graphics.setDepth(2);
     }
 
     getInputSprite() {

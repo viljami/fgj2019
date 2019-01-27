@@ -11,10 +11,11 @@ class Mouse extends Node {
         this.sprite = scene.add.sprite(0, 0, 'mouse');
         this.graphics = scene.add.graphics({ lineStyle: { width: 3, color: 0xff00ff }, fillStyle: { color: 0x00ff00 } });
         this.graphics.fillCircleShape(this.circle);
+        this.graphics.alpha = 0.5;
         this.sprite.setDisplaySize(100, 100);
 
-        this.container.add(this.graphics);
         this.container.add(this.sprite);
+        this.container.add(this.graphics);
 
         this.setupInput();
 
