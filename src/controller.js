@@ -51,9 +51,10 @@ export const sendWarParty = (fromNode, toNode) => {
 export const fight = ({owner, power, toNode}) => {
   if (owner === toNode.owner) {
     toNode.defence += power;
-  }
-
-  if (toNode.defence >= power) {
+    return;
+  } else if (toNode.defence >= power ) {
+    console.log(toNode.owner, owner);
+    toNode.defence -= power;
     return;
   }
 

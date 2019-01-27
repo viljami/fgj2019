@@ -48,7 +48,7 @@ class GameScene extends Phaser.Scene {
             this.computerLastStep = now;
             const nodes = this.model.nodes.filter(isComputer);
             this.model.paths.forEach(a => {
-                if (nodes.some(b => a.node1 === b.name)) {
+                if (nodes.some(b => a.node1 === b.name) && Math.random() > 0.5) {
                     const n1 = getNode(a.node1);
                     const n2 = getNode(a.node2);
                     if (n2.defence < n1.defence) {
@@ -56,7 +56,7 @@ class GameScene extends Phaser.Scene {
                     }
                 }
 
-                if (nodes.some(b => a.node2 === b.name)) {
+                if (nodes.some(b => a.node2 === b.name) && Math.random() > 0.5) {
                     const n1 = getNode(a.node1);
                     const n2 = getNode(a.node2);
                     if (n1.defence < n2.defence) {
