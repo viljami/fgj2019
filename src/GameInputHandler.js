@@ -36,10 +36,10 @@ class GameInputHandler {
 
     setupDrag(model, obj) {
         obj.setDragHandler(this.onNodeDrag.bind(this));
-        obj.getSprite().on('pointerover', function() {
+        obj.getInputSprite().on('pointerover', function() {
             this.targetNode = model;
         }.bind(this));
-        obj.getSprite().on('pointerout', function() {
+        obj.getInputSprite().on('pointerout', function() {
             this.targetNode = null;
         }.bind(this));
     }

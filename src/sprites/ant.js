@@ -11,7 +11,7 @@ class Ant {
             duration: this.model.duration,
         });
         var angle = Phaser.Math.Angle.Between(this.model.fromNode.x, this.model.fromNode.y, this.model.toNode.x, this.model.toNode.y);
-        this.sprite.setAngle(angle * 180/Math.PI + 90);
+        this.sprite.setAngle(angle * 180/Math.PI);
         this.sprite.setDepth(2);
     }
 

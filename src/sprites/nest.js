@@ -5,12 +5,21 @@ class Nest extends Node {
     constructor(model, scene) {
         super(model, scene);
         this.model = model;
+
+        this.container = scene.add.container(0, 0);
+
         this.circle = new Phaser.Geom.Circle(0, 0, model.defence || 5);
         this.graphics = scene.add.graphics({ lineStyle: { width: 3, color: 0xff00ff }, fillStyle: { color: 0x00ff00 } });
         this.graphics.fillCircleShape(this.circle);
+        this.sprite = scene.add.sprite(0, 0, 'nestsmall');
+        this.sprite.setDisplaySize(200, 200);
+
+        this.container.add(this.graphics);
+        this.container.add(this.sprite);
+        
         this.setupInput();
 
-        this.graphics.update = this.update.bind(this);
+        this.container.update = this.update.bind(this);
     }
 
     update() {
@@ -27,6 +36,10 @@ class Nest extends Node {
     }
 
     getSprite() {
+        return this.container;
+    }
+
+    getInputSprite() {
         return this.graphics;
     }
 }

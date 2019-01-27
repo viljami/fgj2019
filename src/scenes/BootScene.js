@@ -40,6 +40,7 @@ class BootScene extends Phaser.Scene {
         this.load.image('worm', 'assets/images/worm.png');
         this.load.image('trail', 'assets/images/trail.png');
         this.load.image('path', 'assets/images/path.png');
+        this.load.image('nestsmall', 'assets/images/nest-small.png');
 
         this.load.audio('bgm', 'assets/audio/antz(loop)v2.mp3');
 
