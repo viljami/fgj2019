@@ -6,8 +6,8 @@
             "owner": "player",
             "x": 100,
             "y": 360,
-            "defence": 30,
-            "generation": 1,
+            "defence": 100,
+            "generation": 5,
             "spritePath": ""
         },
         {
@@ -104,8 +104,8 @@
             "id": 11,
             "name": "cake11",
             "owner": "neutral",
-            "x": 980,
-            "y": 120,
+            "x": 910,
+            "y": 80,
             "defence": 5,
             "generation": 3,
             "spritePath": ""
@@ -115,7 +115,7 @@
             "name": "worm12",
             "owner": "neutral",
             "x": 960,
-            "y": 360,
+            "y": 240,
             "defence": 100,
             "generation": 0,
             "spritePath": ""
@@ -144,8 +144,8 @@
             "id": 15,
             "name": "cake15",
             "owner": "neutral",
-            "x": 780,
-            "y": 610,
+            "x": 750,
+            "y": 620,
             "defence": 5,
             "generation": 3,
             "spritePath": ""
@@ -164,8 +164,8 @@
             "id": 17,
             "name": "donut17",
             "owner": "neutral",
-            "x": 1100,
-            "y": 120,
+            "x": 1110,
+            "y": 100,
             "defence": 5,
             "generation": 2,
             "spritePath": ""
@@ -176,8 +176,8 @@
             "owner": "computer",
             "x": 1100,
             "y": 360,
-            "defence": 30,
-            "generation": 1,
+            "defence": 100,
+            "generation": 5,
             "spritePath": ""
         }
     ],
