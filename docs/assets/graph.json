@@ -7,7 +7,7 @@
             "x": 100,
             "y": 360,
             "defence": 100,
-            "generation": 5,
+            "generation": 15,
             "spritePath": ""
         },
         {
@@ -17,7 +17,7 @@
             "x": 100,
             "y": 150,
             "defence": 5,
-            "generation": 2,
+            "generation": 10,
             "spritePath": ""
         },
         {
@@ -27,7 +27,7 @@
             "x": 200,
             "y": 600,
             "defence": 50,
-            "generation": 0,
+            "generation": 2,
             "spritePath": ""
         },
         {
@@ -37,7 +37,7 @@
             "x": 320,
             "y": 360,
             "defence": 5,
-            "generation": 1,
+            "generation": 2,
             "spritePath": ""
         },
         {
@@ -47,7 +47,7 @@
             "x": 300,
             "y": 100,
             "defence": 5,
-            "generation": 3,
+            "generation": 10,
             "spritePath": ""
         },
         {
@@ -57,7 +57,7 @@
             "x": 300,
             "y": 240,
             "defence": 100,
-            "generation": 0,
+            "generation": 2,
             "spritePath": ""
         },
         {
@@ -67,7 +67,7 @@
             "x": 500,
             "y": 620,
             "defence": 5,
-            "generation": 3,
+            "generation": 10,
             "spritePath": ""
         },
         {
@@ -77,7 +77,7 @@
             "x": 640,
             "y": 100,
             "defence": 200,
-            "generation": 0,
+            "generation": 7,
             "spritePath": ""
         },
         {
@@ -87,7 +87,7 @@
             "x": 640,
             "y": 360,
             "defence": 300,
-            "generation": 0,
+            "generation": 10,
             "spritePath": ""
         },
         {
@@ -107,7 +107,7 @@
             "x": 910,
             "y": 80,
             "defence": 5,
-            "generation": 3,
+            "generation": 10,
             "spritePath": ""
         },
         {
@@ -117,7 +117,7 @@
             "x": 960,
             "y": 240,
             "defence": 100,
-            "generation": 0,
+            "generation": 2,
             "spritePath": ""
         },
         {
@@ -127,7 +127,7 @@
             "x": 960,
             "y": 360,
             "defence": 5,
-            "generation": 1,
+            "generation": 2,
             "spritePath": ""
         },
         {
@@ -147,7 +147,7 @@
             "x": 750,
             "y": 620,
             "defence": 5,
-            "generation": 3,
+            "generation": 10,
             "spritePath": ""
         },
         {
@@ -157,7 +157,7 @@
             "x": 1050,
             "y": 600,
             "defence": 50,
-            "generation": 0,
+            "generation": 2,
             "spritePath": ""
         },
         {
@@ -177,7 +177,7 @@
             "x": 1100,
             "y": 360,
             "defence": 100,
-            "generation": 5,
+            "generation": 15,
             "spritePath": ""
         }
     ],
@@ -253,6 +253,43 @@
         {
             "node1": "worm16",
             "node2": "cake15"
+        },
+        {
+            "node1": "candy13",
+            "node2": "donut14"
+        },
+        {
+            "node1": "donut10",
+            "node2": "mouse9"
+        },
+        {
+            "node1": "worm6",
+            "node2": "candy4"
+        },
+        {
+            "node1": "candy4",
+            "node2": "donut10"
+        },
+        {
+            "node1": "donut14",
+            "node2": "mouse9"
+        },
+        {
+            "node1": "worm12",
+            "node2": "candy13"
+        },
+        {
+            "node1": "cake7",
+            "node2": "donut10"
+        },
+        {
+            "node1": "donut14",
+            "node2": "cake15"
+        },
+        {
+            "node1": "worm6",
+            "node2": "worm12"
         }
+
     ]
 }
