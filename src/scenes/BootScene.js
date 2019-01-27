@@ -30,7 +30,7 @@ class BootScene extends Phaser.Scene {
             this.scene.start('GameScene', graph);
         });
 
-        this.load.image('bg', 'assets/images/bg.jpg');
+        this.load.image('bg', 'assets/images/bg.png');
         this.load.image('ant', 'assets/images/ant.png');
         this.load.image('cake', 'assets/images/cake.png');
         this.load.image('candy', 'assets/images/candy.png');
@@ -39,6 +39,7 @@ class BootScene extends Phaser.Scene {
         this.load.image('snake', 'assets/images/snake.png');
         this.load.image('worm', 'assets/images/worm.png');
         this.load.image('trail', 'assets/images/trail.png');
+        this.load.image('path', 'assets/images/path.png');
 
         this.load.audio('bgm', 'assets/audio/antz(loop)v2.mp3');
 

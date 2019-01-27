@@ -30,7 +30,7 @@ class GameScene extends Phaser.Scene {
         this.model = model;
         this.loadGraph(model);
         this.gameInputHandler.setupInput();
-        var bgm = this.sound.add('bgm', {loop: true});
+        const bgm = this.sound.add('bgm', {loop: true});
         bgm.play();
     }
 
@@ -70,23 +70,24 @@ class GameScene extends Phaser.Scene {
     }
 
     loadGraph(model) {
+        this.add.sprite(0, 0, 'bg');
         this.nodeMapping = {};
-        for (var node of model.nodes) {
+        for (const node of model.nodes) {
             const name = node.name.split(NUMBER)[0];
-            var objCtr = GameObjectCollection[name];
+            const objCtr = GameObjectCollection[name];
             if (!objCtr) {
                 throw new Error('Unknown object type ' + name);
             }
-            var obj = new objCtr(node, this);
+            const obj = new objCtr(node, this);
             this.gameInputHandler.setupDrag(node, obj);
             obj.getSprite().setPosition(node.x, node.y);
             this.nodeMapping[node.name] = node;
             obj.getSprite().setDepth(1);
         }
-        for (var path of model.paths) {
-            var node1 = this.nodeMapping[path.node1];
-            var node2 = this.nodeMapping[path.node2];
-            var p = new Path(path, this, node1.x, node1.y, node2.x, node2.y);
+        for (const path of model.paths) {
+            const node1 = this.nodeMapping[path.node1];
+            const node2 = this.nodeMapping[path.node2];
+            const p = new Path(path, this, node1.x, node1.y, node2.x, node2.y);
             this.gameInputHandler.setupPathInput(path, p);
             p.getSprite().setDepth(0);
         }
