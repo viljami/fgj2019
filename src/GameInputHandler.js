@@ -11,7 +11,7 @@ class GameInputHandler {
     setupInput() {
         this.scene.input.on('pointerup', function() {
             if (this.selectedObject && this.selectedPath){
-                console.log('path', this.selectedObject, this.selectedPath);
+                this.scene.march.play();
                 sendWarParty(
                     this.selectedObject,
                     getNode(
@@ -22,7 +22,6 @@ class GameInputHandler {
             }
 
             if (this.selectedObject && this.targetNode){
-                console.log('node', this.selectedObject, this.targetNode);
                 if (this.selectedObject.name !== this.targetNode.name) {
                     sendWarParty(
                         this.selectedObject,

@@ -3,13 +3,7 @@ import graph from '../model/graph';
 
 class BootScene extends Phaser.Scene {
     constructor(test) {
-        super({
-            key: 'BootScene'
-        });
-    }
-
-    create() {
-
+        super({key: 'BootScene'});
     }
 
     preload() {

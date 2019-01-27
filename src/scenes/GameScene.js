@@ -32,6 +32,7 @@ class GameScene extends Phaser.Scene {
         this.gameInputHandler.setupInput();
         this.victory = this.sound.add('victory', {loop: false});
         this.defeat = this.sound.add('defeat', {loop: false});
+        this.march = this.sound.add('march', {loop: false});
         this.bgm = this.sound.add('bgm', {loop: true});
         this.bgm.play();
         var config = {
