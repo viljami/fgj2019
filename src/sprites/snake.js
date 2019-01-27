@@ -22,11 +22,6 @@ class Snake extends Node {
         this.container.update = this.update.bind(this);
     }
 
-    setupInput() {
-        this.inputCircle = new Phaser.Geom.Circle(0, 0, this.model.defence < 25 ? 25 : this.model.defence);
-        this.graphics.setInteractive(this.inputCircle, Phaser.Geom.Circle.Contains);
-    }
-
     getSprite() {
         return this.container;
     }
