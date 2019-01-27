@@ -62,12 +62,6 @@ class BootScene extends Phaser.Scene {
         // Check rawAssets folder for the TexturePacker project I use to prepare these files.
         // this.load.atlas('mario-sprites', 'assets/mario-sprites.png', 'assets/mario-sprites.json');
 
-        // Music to play. It's not properly edited for an continous loop, but game play experience isn't really the aim of this repository either.
-        this.load.audio('victory', [
-            'assets/audio/victory.mp3',
-            'assets/audio/victory.wav',
-        ]);
-
         // Sound effects in a audioSprite.
         // this.load.audioSprite('sfx', 'assets/audio/sfx.json', [
         //     'assets/audio/sfx.ogg',
