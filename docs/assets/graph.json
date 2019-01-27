@@ -1,0 +1,258 @@
+{
+    "nodes": [
+        {
+            "id": 1,
+            "name": "nest1",
+            "owner": "player",
+            "x": 100,
+            "y": 360,
+            "defence": 30,
+            "generation": 1,
+            "spritePath": ""
+        },
+        {
+            "id": 2,
+            "name": "donut2",
+            "owner": "neutral",
+            "x": 200,
+            "y": 240,
+            "defence": 5,
+            "generation": 2,
+            "spritePath": ""
+        },
+        {
+            "id": 3,
+            "name": "worm3",
+            "owner": "neutral",
+            "x": 300,
+            "y": 550,
+            "defence": 50,
+            "generation": 0,
+            "spritePath": ""
+        },
+        {
+            "id": 4,
+            "name": "candy4",
+            "owner": "neutral",
+            "x": 320,
+            "y": 360,
+            "defence": 5,
+            "generation": 1,
+            "spritePath": ""
+        },
+        {
+            "id": 5,
+            "name": "cake5",
+            "owner": "neutral",
+            "x": 300,
+            "y": 120,
+            "defence": 5,
+            "generation": 3,
+            "spritePath": ""
+        },
+        {
+            "id": 6,
+            "name": "worm6",
+            "owner": "neutral",
+            "x": 300,
+            "y": 240,
+            "defence": 100,
+            "generation": 0,
+            "spritePath": ""
+        },
+        {
+            "id": 7,
+            "name": "cake7",
+            "owner": "neutral",
+            "x": 500,
+            "y": 620,
+            "defence": 5,
+            "generation": 3,
+            "spritePath": ""
+        },
+        {
+            "id": 8,
+            "name": "snake8",
+            "owner": "neutral",
+            "x": 640,
+            "y": 100,
+            "defence": 200,
+            "generation": 0,
+            "spritePath": ""
+        },
+        {
+            "id": 9,
+            "name": "mouse9",
+            "owner": "neutral",
+            "x": 640,
+            "y": 360,
+            "defence": 300,
+            "generation": 0,
+            "spritePath": ""
+        },
+        {
+            "id": 10,
+            "name": "donut10",
+            "owner": "neutral",
+            "x": 400,
+            "y": 460,
+            "defence": 5,
+            "generation": 2,
+            "spritePath": ""
+        },
+        {
+            "id": 11,
+            "name": "cake11",
+            "owner": "neutral",
+            "x": 980,
+            "y": 120,
+            "defence": 5,
+            "generation": 3,
+            "spritePath": ""
+        },
+        {
+            "id": 12,
+            "name": "worm12",
+            "owner": "neutral",
+            "x": 960,
+            "y": 360,
+            "defence": 100,
+            "generation": 0,
+            "spritePath": ""
+        },
+        {
+            "id": 13,
+            "name": "candy13",
+            "owner": "neutral",
+            "x": 960,
+            "y": 360,
+            "defence": 5,
+            "generation": 1,
+            "spritePath": ""
+        },
+        {
+            "id": 14,
+            "name": "donut14",
+            "owner": "neutral",
+            "x": 880,
+            "y": 460,
+            "defence": 5,
+            "generation": 2,
+            "spritePath": ""
+        },
+        {
+            "id": 15,
+            "name": "cake15",
+            "owner": "neutral",
+            "x": 780,
+            "y": 610,
+            "defence": 5,
+            "generation": 3,
+            "spritePath": ""
+        },
+        {
+            "id": 16,
+            "name": "worm16",
+            "owner": "neutral",
+            "x": 980,
+            "y": 550,
+            "defence": 50,
+            "generation": 0,
+            "spritePath": ""
+        },
+        {
+            "id": 17,
+            "name": "donut17",
+            "owner": "neutral",
+            "x": 1080,
+            "y": 240,
+            "defence": 5,
+            "generation": 2,
+            "spritePath": ""
+        },
+        {
+            "id": 18,
+            "name": "nest18",
+            "owner": "computer",
+            "x": 1100,
+            "y": 360,
+            "defence": 30,
+            "generation": 1,
+            "spritePath": ""
+        }
+    ],
+    "paths": [
+        {
+            "node1": "nest1",
+            "node2": "donut2"
+        },
+        {
+            "node1": "nest1",
+            "node2": "worm3"
+        },
+        {
+            "node1": "nest1",
+            "node2": "candy4"
+        },
+        {
+            "node1": "donut2",
+            "node2": "worm6"
+        },
+        {
+            "node1": "worm3",
+            "node2": "cake7"
+        },
+        {
+            "node1": "cake5",
+            "node2": "worm6"
+        },
+        {
+            "node1": "worm6",
+            "node2": "snake8"
+        },
+        {
+            "node1": "snake8",
+            "node2": "worm12"
+        },
+        {
+            "node1": "cake11",
+            "node2": "worm12"
+        },
+        {
+            "node1": "worm12",
+            "node2": "donut17"
+        },
+        {
+            "node1": "donut17",
+            "node2": "nest18"
+        },
+        {
+            "node1": "candy4",
+            "node2": "mouse9"
+        },
+        {
+            "node1": "mouse9",
+            "node2": "candy13"
+        },
+        {
+            "node1": "candy13",
+            "node2": "nest18"
+        },
+        {
+            "node1": "worm3",
+            "node2": "donut10"
+        },
+        {
+            "node1": "nest18",
+            "node2": "worm16"
+        },
+        {
+            "node1": "worm16",
+            "node2": "donut14"
+        },
+        {
+            "node1": "worm16",
+            "node2": "cake15"
+        }
+    ]
+}
