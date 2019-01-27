@@ -42,6 +42,10 @@ export const sendWarParty = (fromNode, toNode) => {
   }
 
   const path = getPath(fromNode.name, toNode.name);
+  if (!path) {
+    return;
+  }
+
   const warParty = createWarParty(fromNode, toNode);
 
   path.parties.push(warParty);
