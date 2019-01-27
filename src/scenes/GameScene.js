@@ -30,11 +30,12 @@ class GameScene extends Phaser.Scene {
         this.model = model;
         this.loadGraph(model);
         this.gameInputHandler.setupInput();
-        this.victory = this.sound.add('victory', {loop: false});
+        this.victory = this.sound.add('victory');
         this.defeat = this.sound.add('defeat', {loop: false});
         this.march = this.sound.add('march', {loop: false});
         this.bgm = this.sound.add('bgm', {loop: true});
         this.bgm.play();
+
         var config = {
             key: 'antwalk',
             frames: this.anims.generateFrameNumbers('antsheet', { start: 0, end: 3, first: 0 }),
@@ -49,6 +50,7 @@ class GameScene extends Phaser.Scene {
             repeat: -1
         };
         this.anims.create(config);
+        this.isEnd = false;
     }
 
 
@@ -86,7 +88,8 @@ class GameScene extends Phaser.Scene {
 
         const isVictoryState = isVictory();
         const isDefeatState = isDefeat();
-        if (isVictoryState || isDefeatState) {
+        if (!this.isEnd && (isVictoryState || isDefeatState)) {
+            this.isEnd = true;
             this.bgm.pause();
 
             if (isVictoryState) {
