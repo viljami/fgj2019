@@ -42,6 +42,13 @@ class GameScene extends Phaser.Scene {
             repeat: -1
         };
         this.anims.create(config);
+        config = {
+            key: 'nestanim',
+            frames: this.anims.generateFrameNumbers('nestsheet', { start: 0, end: 6, first: 0 }),
+            frameRate: 20,
+            repeat: -1
+        };
+        this.anims.create(config);
     }
 
 
