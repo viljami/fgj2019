@@ -24,7 +24,7 @@ class BootScene extends Phaser.Scene {
             this.scene.start('GameScene', graph);
         });
 
-        this.load.image('bg', 'assets/images/bg.png');
+        this.load.image('bg', 'assets/images/Background_720.jpg');
         this.load.image('ant', 'assets/images/ant.png');
         
         this.load.spritesheet('antsheet', 'assets/images/ant_spritesheet.png', { frameWidth: 500, frameHeight: 500, endFrame: 3 });

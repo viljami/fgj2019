@@ -97,7 +97,9 @@ class GameScene extends Phaser.Scene {
     }
 
     loadGraph(model) {
-        this.add.sprite(0, 0, 'bg');
+        this.bg = this.add.sprite(0, 0, 'bg');
+        this.bg.displayOriginX = 0;
+        this.bg.displayOriginY = 0;
         this.nodeMapping = {};
         for (const node of model.nodes) {
             const name = node.name.split(NUMBER)[0];
