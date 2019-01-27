@@ -14,8 +14,8 @@
             "id": 2,
             "name": "donut2",
             "owner": "neutral",
-            "x": 200,
-            "y": 240,
+            "x": 100,
+            "y": 150,
             "defence": 5,
             "generation": 2,
             "spritePath": ""
@@ -24,8 +24,8 @@
             "id": 3,
             "name": "worm3",
             "owner": "neutral",
-            "x": 300,
-            "y": 550,
+            "x": 200,
+            "y": 600,
             "defence": 50,
             "generation": 0,
             "spritePath": ""
@@ -45,7 +45,7 @@
             "name": "cake5",
             "owner": "neutral",
             "x": 300,
-            "y": 120,
+            "y": 100,
             "defence": 5,
             "generation": 3,
             "spritePath": ""
@@ -154,8 +154,8 @@
             "id": 16,
             "name": "worm16",
             "owner": "neutral",
-            "x": 980,
-            "y": 550,
+            "x": 1050,
+            "y": 600,
             "defence": 50,
             "generation": 0,
             "spritePath": ""
@@ -164,8 +164,8 @@
             "id": 17,
             "name": "donut17",
             "owner": "neutral",
-            "x": 1080,
-            "y": 240,
+            "x": 1100,
+            "y": 120,
             "defence": 5,
             "generation": 2,
             "spritePath": ""

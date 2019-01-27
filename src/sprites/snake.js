@@ -23,8 +23,8 @@ class Snake extends Node {
 
     update() {
         this.graphics.clear();
-        this.graphics.defaultFillColor = this.model.owner === 'player' ? 0x00ff00 : 0xff0000;
-        this.circle.setTo(this.circle.x, this.circle.y, this.model.defence / 4 < 5 ? 5 : this.model.defence / 4);
+        this.graphics.defaultFillColor = this.model.owner === 'player' ? 0x66ff66 : this.model.owner === 'neutral' ? 0x6666ff : 0xff2222;
+        this.circle.setTo(this.circle.x, this.circle.y, this.model.defence / 3 < 5 ? 5 : this.model.defence / 3);
         this.inputCircle.setTo(0, 0, this.model.defence < 25 ? 25 : this.model.defence);
         this.graphics.fillCircleShape(this.circle);
     }
