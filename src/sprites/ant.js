@@ -1,8 +1,9 @@
 class Ant {
     constructor(model, scene) {
         this.model = model;
-        this.sprite = scene.add.sprite(this.model.fromNode.x, this.model.fromNode.y, 'ant');
+        this.sprite = scene.add.sprite(this.model.fromNode.x, this.model.fromNode.y, 'antsheet');
         this.sprite.setDisplaySize(40, 40);
+        this.sprite.anims.play('antwalk');
         this.tween = scene.tweens.add({
             targets: this.sprite,
             x: this.model.toNode.x,

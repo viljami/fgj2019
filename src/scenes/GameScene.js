@@ -34,6 +34,13 @@ class GameScene extends Phaser.Scene {
         this.defeat = this.sound.add('defeat', {loop: false});
         this.bgm = this.sound.add('bgm', {loop: true});
         this.bgm.play();
+        var config = {
+            key: 'antwalk',
+            frames: this.anims.generateFrameNumbers('antsheet', { start: 0, end: 3, first: 0 }),
+            frameRate: 20,
+            repeat: -1
+        };
+        this.anims.create(config);
     }
 
 
