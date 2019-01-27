@@ -5,7 +5,7 @@ class Path {
         var dx = x1-x2;
         var dy = y1-y2;
         var dist = Math.sqrt(dx*dx+dy*dy);
-        var scale = 0.5;
+        var scale = 0.25;
         this.sprite = scene.add.tileSprite(x1, y1, dist/scale, 200, 'path');
         var angle = Phaser.Math.Angle.Between(x1, y1, x2, y2);
         this.sprite.angle = angle * 180/Math.PI;
